@@ -1,1 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALTs夜間動物病院 | 焼津市の犬・猫・エキゾチックアニマル夜間診療</title>
+    <meta name="description" content="静岡県焼津市のALTs夜間動物病院です。犬・猫の夜間診療、エキゾチックアニマルの専門診療に火・水・木曜日に対応します。ご来院の前には必ずお電話ください。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* カスタムカラースキーム */
+        :root {
+            --amber: #D3A257; /* 琥珀色 */
+            --iron: #36454F;  /* 鉄色 */
+            --light-bg: #FDFBF5;
+            --text-color: #333;
+        }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 112px; /* ヘッダー+トップバーの高さ分 */
+        }
+        body {
+            font-family: 'Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+        }
+        /* Tailwind CSSのカスタム設定 */
+        .bg-amber { background-color: var(--amber); }
+        .bg-iron { background-color: var(--iron); }
+        .text-amber { color: var(--amber); }
+        .text-iron { color: var(--iron); }
+        .border-amber { border-color: var(--amber); }
+        .hover\:bg-amber-dark:hover { background-color: #c08c3c; }
+
+        /* ハンバーガーメニューのアニメーション */
+        .hamburger .bar { transition: all 0.3s ease-in-out; }
+        .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.active .bar:nth-child(2) { opacity: 0; }
+        .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* アコーディオン（よくあるご質問） */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-header.priority {
+             background-color: #FFFBEB; /* 黄色がかった背景 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 電話番号トップバー -->
+    <div class="bg-iron text-white text-sm text-center py-2 fixed top-0 w-full z-50 h-8 flex items-center justify-center">
+        <i class="fas fa-phone-alt mr-2"></i>夜間診療のお電話はこちら: <a href="tel:054-631-4757" class="font-bold underline">054-631-4757</a>
+    </div>
+
+    <!-- ヘッダー -->
+    <header id="header" class="bg-white shadow-md fixed top-8 left-0 w-full z-40 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center space-x-3">
+                    <img src="https://raw.githubusercontent.com/AmberLinks/ALTsNightAH/main/logoImage.png" alt="ALTs夜間動物病院 ロゴ" class="h-12 w-12 object-contain">
+                    <div>
+                        <span class="text-lg font-bold text-iron block leading-tight">ALTs夜間動物病院</span>
+                        <span class="text-xs text-amber font-semibold">犬・猫の夜間診療｜エキゾチックアニマルの専門診療</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#about" class="text-gray-600 hover:text-amber transition">当院について</a>
+                    <a href="#flow" class="text-gray-600 hover:text-amber transition">診療の流れ</a>
+                    <a href="#animals" class="text-gray-600 hover:text-amber transition">診療対象動物</a>
+                    <a href="#faq" class="text-gray-600 hover:text-amber transition">よくあるご質問</a>
+                    <a href="#questionnaire" class="text-gray-600 hover:text-amber transition">WEB問診票</a>
+                    <a href="#access" class="text-gray-600 hover:text-amber transition">アクセス</a>
+                </nav>
+                <button id="hamburger-button" class="md:hidden hamburger">
+                    <span class="bar block w-6 h-0.5 bg-iron my-1"></span>
+                    <span class="bar block w-6 h-0.5 bg-iron my-1"></span>
+                    <span class="bar block w-6 h-0.5 bg-iron my-1"></span>
+                </button>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <a href="#about" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50">当院について</a>
+            <a href="#flow" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50">診療の流れ</a>
+            <a href="#animals" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50">診療対象動物</a>
+            <a href="#faq" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50">よくあるご質問</a>
+            <a href="#questionnaire" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50">WEB問診票</a>
+            <a href="#access" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50">アクセス</a>
+        </div>
+    </header>
+
+    <main class="pt-28">
+        <!-- メインビジュアル -->
+        <section class="relative bg-cover bg-center text-white py-24 md:py-32" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://images.unsplash.com/photo-1583337130417-2346040878a8?q=80&w=1740&auto=format&fit=crop)">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 text-shadow">大切な家族のために。<br>夜間も安心の獣医療を。</h1>
+                <p class="text-lg md:text-xl text-shadow-sm">静岡県焼津市の夜間動物病院</p>
+                <div class="mt-8 bg-white/20 backdrop-blur-sm p-6 rounded-lg max-w-3xl mx-auto border border-white/30">
+                    <h2 class="text-xl font-bold mb-2">診療時間：火・水・木 18:00 - 22:00</h2>
+                    <p class="font-bold text-yellow-300 text-lg mb-4">ご来院の前に必ずお電話ください【事前電話制】</p>
+                    <a href="tel:054-631-4757" class="inline-block bg-amber text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-amber-dark transition-transform transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-phone-alt mr-2"></i>054-631-4757
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 当院について -->
+        <section id="about" class="py-16 md:py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-iron mb-10">当院について</h2>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg text-center">
+                    <p class="leading-relaxed mb-4">
+                        ALTs夜間動物病院は、日中の病院が閉まる時間帯に発生する 「いつもと違う」に対応する一次診療施設です。 ご家族の不安に寄り添い、動物たちの状態を安定させることを第一に考えています。必要に応じて翌日以降、かかりつけ医へスムーズに引き継ぎます。
+                    </p>
+                    <p class="leading-relaxed mb-4">
+                        また犬・猫の夜間診療に加え、対応病院の少ない<strong class="text-amber font-bold">エキゾチックアニマルの専門診療</strong>にも力を入れています。 
+                    </p>
+                    <p class="leading-relaxed">
+                        症状が分かりづらいことも多いと思いますので違和感を感じた段階でご受診ください。
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 診療の流れ -->
+        <section id="flow" class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-iron mb-12">診療の流れ</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- ステップ1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-24 h-24 bg-amber text-white rounded-full flex items-center justify-center text-3xl mb-4"><i class="fas fa-phone-volume"></i></div>
+                        <h3 class="text-xl font-bold text-iron mb-2">Step 1: お電話</h3>
+                        <p class="text-gray-600">まずはお電話 <strong class="block text-lg my-1 text-iron">054-631-4757</strong> までご連絡ください。<br>症状をお伺いし、来院のご案内をいたします。<br class="hidden sm:block">ご不明点は<a href="#faq" class="text-amber underline hover:no-underline">よくあるご質問</a>もご確認ください。</p>
+                    </div>
+                    <!-- ステップ2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-24 h-24 bg-amber text-white rounded-full flex items-center justify-center text-3xl mb-4"><i class="fas fa-file-alt"></i></div>
+                        <h3 class="text-xl font-bold text-iron mb-2">Step 2: WEB問診票</h3>
+                        <p class="text-gray-600 mb-4">初診の方は、WEB問診票にご回答いただくと受付がスムーズです。</p>
+                        <a href="https://amberlinks.github.io/Questionnaire/" target="_blank" rel="noopener noreferrer" class="inline-block bg-iron text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-80 transition shadow-md text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i>問診票を開く
+                        </a>
+                    </div>
+                    <!-- ステップ3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-24 h-24 bg-amber text-white rounded-full flex items-center justify-center text-3xl mb-4"><i class="fas fa-hospital"></i></div>
+                        <h3 class="text-xl font-bold text-iron mb-2">Step 3: ご来院・診察</h3>
+                        <p class="text-gray-600">お気をつけてご来院ください。到着されましたら、速やかに診察を開始します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 診療対象動物 -->
+        <section id="animals" class="py-16 md:py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-iron mb-10">診療対象動物</h2>
+                <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                        <strong class="text-lg">犬・猫</strong>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                        <strong class="text-lg">ウサギ</strong>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                        <strong class="text-lg">げっ歯類</strong>
+                        <span class="text-xs mt-1">ハムスター, チンチラ等</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                        <strong class="text-lg">その他哺乳類</strong>
+                        <span class="text-xs mt-1">フェレット, ハリネズミ等</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                        <strong class="text-lg">鳥類</strong>
+                        <span class="text-xs mt-1">インコ, オウム, 猛禽類等</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                        <strong class="text-lg">爬虫類</strong>
+                        <span class="text-xs mt-1">カメ, トカゲ, ヘビ等</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                        <strong class="text-lg">両生類</strong>
+                        <span class="text-xs mt-1">カエル, イモリ等</span>
+                    </div>
+                    <div class="bg-amber/10 p-6 rounded-lg shadow-inner flex flex-col items-center justify-center">
+                         <p class="font-semibold text-iron">ご注意</p>
+                        <p class="text-xs mt-1">詳細は「よくあるご質問」をご確認ください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- よくあるご質問 -->
+        <section id="faq" class="py-16 md:py-20 bg-white">
+             <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-iron mb-10">よくあるご質問</h2>
+                <div class="max-w-3xl mx-auto space-y-4">
+
+                    <!-- 支払い方法 -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header priority w-full flex justify-between items-center p-5 text-left font-semibold text-iron hover:bg-amber/20">
+                            <span class="flex items-center"><i class="fas fa-star text-amber-500 mr-3"></i>支払い方法を教えて下さい</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 bg-white border-t">各種クレジットカード、電子マネー、QRコード決済に対応しております。セキュリティの都合上、キャッシュレス決済を原則とさせていただいております。お電話の際にご確認ください。</p>
+                        </div>
+                    </div>
+
+                    <!-- 動物保険 -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header priority w-full flex justify-between items-center p-5 text-left font-semibold text-iron hover:bg-amber/20">
+                            <span class="flex items-center"><i class="fas fa-star text-amber-500 mr-3"></i>動物保険には対応していますか？</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 bg-white border-t space-y-3">
+                                <p>はい、各種動物保険に対応しています。<br>窓口精算が可能な保険はアニコムとアイペットになります。</p>
+                                <p>保険申請に必要な書類がある場合は受診時にお忘れなくお伝えください。また書類の作成が必要な場合は別途書類作成費用や後日発行が発生する場合がありますのでご了承ください。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 野生鳥獣 -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header priority w-full flex justify-between items-center p-5 text-left font-semibold text-iron hover:bg-amber/20">
+                            <span class="flex items-center"><i class="fas fa-star text-amber-500 mr-3"></i>野生鳥獣を保護しましたが受診可能ですか？</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 bg-white border-t space-y-4">
+                                <p>鳥獣保護管理法により許可なく野鳥・野生動物を捕獲・殺傷・飼育することは禁止されています。</p>
+                                <div class="bg-red-100 border-l-4 border-red-500 text-red-800 p-4 rounded-r-lg" role="alert">
+                                    <p class="font-bold">そのため当院では野鳥・野生動物の診察・ご相談に関してはお受けすることができません。</p>
+                                </div>
+                                <p>野鳥・野生動物に関するお問い合わせは、<a href="https://www.kankyo.metro.tokyo.lg.jp/nature/animals_plants/birds/faq" target="_blank" rel="noopener noreferrer" class="text-amber underline hover:no-underline">野生鳥獣との接し方について</a> を参考にしていただいたうえで、お住いの地域の担当部署にお問い合わせをお願いいたします。</p>
+                                <p>焼津市: <a href="https://www.city.yaizu.lg.jp/life/pet-animals/wildlife/rescue-wildlife.html" target="_blank" rel="noopener noreferrer" class="text-amber underline hover:no-underline">市の案内ページへ</a></p>
+                                <p class="pt-3 border-t">『足環がついている鳥、インコなどご家庭で暮らす鳥』の場合は迷い鳥の可能性があるため、発見された場合は<a href="https://www.tsubasa.ne.jp/protect-lost-bird/" target="_blank" rel="noopener noreferrer" class="text-amber underline hover:no-underline">こちら</a>または最寄りの警察署へお問い合わせをお願いいたします。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 電話相談 -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header priority w-full flex justify-between items-center p-5 text-left font-semibold text-iron hover:bg-amber/20">
+                            <span class="flex items-center"><i class="fas fa-star text-amber-500 mr-3"></i>症状に関して電話で相談はできますか？</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 bg-white border-t">初診や初めての症状に関してはお電話だけでのお答えはいたしかねます。病状の把握のため、一度来院していただき診察を受けていただくことを推奨します。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 診察できる動物 -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header priority w-full flex justify-between items-center p-5 text-left font-semibold text-iron hover:bg-amber/20">
+                            <span class="flex items-center"><i class="fas fa-star text-amber-500 mr-3"></i>診察できる動物の種類を教えて下さい</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 bg-white border-t space-y-3">
+                                <p>診察可能な動物は次のとおりです。</p>
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li><strong>犬:</strong> ※大型犬・超大型犬は一度ご相談ください。可能な検査・処置に制限が出る場合がございます</li>
+                                    <li><strong>猫</strong></li>
+                                    <li><strong>ウサギ</strong></li>
+                                    <li><strong>鳥類:</strong> インコ・オウム類（セキセイ、オカメ、ボタン、コザクラ、バタンなど）フィンチ類（文鳥、十姉妹、キンカチョウなど）家禽類（ウズラ、ニワトリ、アヒルなど）・小型猛禽類など</li>
+                                    <li><strong>齧歯類:</strong> モルモット・ハムスター・チンチラ・リス・ジリス・プレーリードッグ・ラット・マウス・スナネズミ・デグーなど</li>
+                                    <li><strong>その他哺乳類:</strong> フェレット、ハリネズミ、フクロモモンガ、ミーアキャット、フェネック</li>
+                                    <li><strong>爬虫類:</strong> カメ、トカゲ、ヘビなど ※毒ヘビやドクトカゲの診察は行っておりません</li>
+                                    <li><strong>両生類:</strong> カエル、イモリなど</li>
+                                </ul>
+                                <p>こちらに記載されていない動物種は「診察できない動物の種類」をご確認の上、病院にご相談ください。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 診察できない動物 -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header priority w-full flex justify-between items-center p-5 text-left font-semibold text-iron hover:bg-amber/20">
+                            <span class="flex items-center"><i class="fas fa-star text-amber-500 mr-3"></i>診察できない動物の種類を教えて下さい</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 bg-white border-t space-y-3">
+                                <p>下記動物は法令・病院の設備・スタッフの都合上お受けすることができませんのでご了承ください。</p>
+                                <ul class="list-disc list-inside space-y-2">
+                                    <li>魚類</li>
+                                    <li>霊長類</li>
+                                    <li>無脊椎動物（虫や甲殻類など）</li>
+                                    <li>産業動物（牛、水牛、鹿、めん羊、山羊、豚、いのしし、鶏、あひる、うずら、きじ、だちょう、ほろほろ鳥、七面鳥、馬）※ご家庭で暮らす鳥類は除く</li>
+                                    <li>野生鳥獣（各自治体のHPの案内に従ってください）</li>
+                                    <li>危険動物（動物愛護管理法における特定動物の対象となる動物種）</li>
+                                    <li>有毒動物</li>
+                                    <li>飼養許可の無い外来生物法対象動物</li>
+                                </ul>
+                                <p>ご不明な点がある場合は病院までお問い合わせください。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 事前費用 -->
+                     <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-iron bg-amber/10 hover:bg-amber/20">
+                            <span>事前に費用を知ることはできますか？</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 bg-white border-t">はい、可能な限りお伝えします。<br>ただし診察前の場合は状態や病気により検査項目や処置内容により費用が変わることがあるため、目安となる金額のお伝えであることをご了承ください。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 複数人での来院 -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-iron bg-amber/10 hover:bg-amber/20">
+                            <span>複数人で病院を受診しても大丈夫ですか？</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 bg-white border-t">院内での待機は原則として事情のわかる大人の方が最少人数でいらしてください。これは感染症対策を考慮した際に病院の待合や診察室のスペースの都合上、密になる空間を避けられないためご理解ください。お連れの方は病院のお近くで待機していただければ幸いです。</p>
+                        </div>
+                    </div>
+
+                    <!-- 代理人 -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-iron bg-amber/10 hover:bg-amber/20">
+                            <span>代理人が連れて行っても大丈夫ですか？</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 bg-white border-t">ご家族の同意があれば大丈夫です。その場合は、病院で獣医師や動物看護師から問診や検査の提案があるため動物の状態や事情を把握している大人の方がお連れいただくようにお願いいたします。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- セカンドオピニオン -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-iron bg-amber/10 hover:bg-amber/20">
+                            <span>セカンドオピニオンに対応していますか？</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 bg-white border-t space-y-2">
+                                <p><strong>犬猫:</strong> 原則夜間でのセカンドオピニオンは実施しておりません。診察をご希望の方は日中のALTs動物病院までお問い合わせください。</p>
+                                <p><strong>エキゾチックアニマル:</strong> 事前にお電話にてご相談ください（受付時間内のみ）。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ワクチン・爪切り -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-iron bg-amber/10 hover:bg-amber/20">
+                            <span>ワクチン接種や爪切りはできますか？</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-5 bg-white border-t">
+                                <p>夜間診療は犬猫の応急対応やエキゾチックアニマルの専門診療を目的としているため、混合ワクチン接種、予防薬の処方、爪切りなどの日常ケア、計画的な手術（不妊・去勢手術など）は原則として行っておりません。かかりつけの動物病院をご受診ください。</p>
+                                <p class="mt-2 text-sm text-amber font-semibold">※エキゾチックアニマルは対応可能病院がない場合はご相談ください。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- トリミング -->
+                    <div class="accordion-item border rounded-lg overflow-hidden">
+                        <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-semibold text-iron bg-amber/10 hover:bg-amber/20">
+                            <span>トリミングは行っていますか？</span>
+                            <i class="fas fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="p-5 bg-white border-t">現在、夜間でのトリミングは行なっておりません。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEB問診票 -->
+        <section id="questionnaire" class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-iron mb-4">WEB問診票</h2>
+                <p class="text-center text-gray-600 mb-10">初診の方は、下のボタンから問診票にご回答いただくと受付がスムーズです。</p>
+                <div class="text-center">
+                    <a href="https://amberlinks.github.io/Questionnaire/" target="_blank" rel="noopener noreferrer" class="inline-block bg-iron text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-80 transition shadow-lg text-lg">
+                        <i class="fas fa-external-link-alt mr-2"></i>WEB問診票を開く
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- アクセス -->
+        <section id="access" class="py-16 md:py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-iron mb-10">アクセス</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.0270038891157!2d1dM!3d34.62879998045331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601a8b9074092497%3A0x25e40854d1d9111e!2z44CSNDI1LTAwNDEg静岡県焼津市石津787番地の2!5e0!3m2!1sja!2sjp!4v1693476313337!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-md"></iframe>
+                    </div>
+                    <div class="bg-amber/10 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold text-iron mb-4">ALTs夜間動物病院</h3>
+                        <p class="mb-4"><strong>住所:</strong> 〒425-0041 静岡県焼津市石津１丁目19−２</p>
+                        <p class="mb-4"><strong>電話番号:</strong> 054-631-4757</p>
+                        <p><strong>駐車場:</strong> 病院前に駐車場がございます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-iron text-white text-center py-6">
+        <div class="container mx-auto px-4">
+            <div class="mb-4">
+                <a href="https://amberlinks.github.io/Recruitment/" target="_blank" rel="noopener noreferrer" class="text-amber hover:underline transition">
+                    <i class="fas fa-user-plus mr-2"></i>求人情報
+                </a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 ALTs夜間動物病院. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerBtn = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const header = document.getElementById('header');
+
+        // ハンバーガーメニューの開閉
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // メニュー項目クリックでメニューを閉じる
+        document.querySelectorAll('#mobile-menu a, nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    hamburgerBtn.classList.remove('active');
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // アコーディオンの開閉
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.fa-chevron-down');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('rotate-180');
+                } else {
+                    // 他のアコーディオンを閉じる場合はこの2行を有効化
+                    // document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+                    // document.querySelectorAll('.accordion-header .fa-chevron-down').forEach(i => i.classList.remove('rotate-180'));
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
 
