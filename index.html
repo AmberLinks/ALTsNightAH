@@ -12,7 +12,7 @@
         :root {
             --amber: #D3A257; /* 琥珀色 */
             --iron: #36454F;  /* 鉄色 */
-            --light-bg: #FDFBF5;
+            --light-bg: #FFFFFF; /* 明るさと清潔感を出すために白に変更 */
             --text-color: #333;
         }
         html {
@@ -54,8 +54,10 @@
 <body class="antialiased">
 
     <!-- 電話番号トップバー -->
-    <div class="bg-iron text-white text-sm text-center py-2 fixed top-0 w-full z-50 h-8 flex items-center justify-center">
-        <i class="fas fa-phone-alt mr-2"></i>夜間診療のお電話はこちら: <a href="tel:054-631-4757" class="font-bold underline">054-631-4757</a>
+    <div class="bg-iron text-white text-sm fixed top-0 w-full z-50 h-8 flex items-center justify-center px-4">
+        <div class="flex items-center">
+             <i class="fas fa-phone-alt mr-2"></i>夜間診療のお電話はこちら: <a href="tel:054-631-4757" class="font-bold underline ml-1">054-631-4757</a>
+        </div>
     </div>
 
     <!-- ヘッダー -->
@@ -63,21 +65,33 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="#" class="flex items-center space-x-3">
-                    <img src="https://raw.githubusercontent.com/AmberLinks/ALTsNightAH/main/logoImage.png" alt="ALTs夜間動物病院 ロゴ" class="h-12 w-12 object-contain">
+                    <img src="https://raw.githubusercontent.com/AmberLinks/ALTsNightAH/main/logoImage.png" alt="ALTs夜間動物病院 ロゴ" class="h-12 w-12 object-contain rounded-md">
                     <div>
                         <span class="text-lg font-bold text-iron block leading-tight">ALTs夜間動物病院</span>
                         <span class="text-xs text-amber font-semibold">犬・猫の夜間診療｜エキゾチックアニマルの専門診療</span>
                     </div>
                 </a>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="#about" class="text-gray-600 hover:text-amber transition">当院について</a>
-                    <a href="#flow" class="text-gray-600 hover:text-amber transition">診療の流れ</a>
-                    <a href="#animals" class="text-gray-600 hover:text-amber transition">診療対象動物</a>
-                    <a href="#faq" class="text-gray-600 hover:text-amber transition">よくあるご質問</a>
-                    <a href="#questionnaire" class="text-gray-600 hover:text-amber transition">WEB問診票</a>
-                    <a href="#access" class="text-gray-600 hover:text-amber transition">アクセス</a>
-                    <a href="https://amberlinks.github.io/Recruitment/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-amber transition">求人情報</a>
-                </nav>
+                
+                <!-- Desktop Dropdown Menu -->
+                <div class="hidden md:block relative">
+                    <button id="desktop-menu-button" class="inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber">
+                        メニュー
+                        <i class="fas fa-chevron-down ml-2 -mr-1 h-5 w-5"></i>
+                    </button>
+                    <div id="desktop-menu" class="hidden absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="desktop-menu-button">
+                            <a href="#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">当院について</a>
+                            <a href="#flow" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">診療の流れ</a>
+                            <a href="#animals" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">診療対象動物</a>
+                            <a href="#faq" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">よくあるご質問</a>
+                            <a href="#questionnaire" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">WEB問診票</a>
+                            <a href="#access" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">アクセス</a>
+                            <a href="https://amberlinks.github.io/Recruitment/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">求人情報</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
                 <button id="hamburger-button" class="md:hidden hamburger">
                     <span class="bar block w-6 h-0.5 bg-iron my-1"></span>
                     <span class="bar block w-6 h-0.5 bg-iron my-1"></span>
@@ -99,9 +113,10 @@
 
     <main class="pt-28">
         <!-- メインビジュアル -->
-        <section class="relative bg-cover bg-center text-white py-24 md:py-32" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://raw.githubusercontent.com/AmberLinks/ALTsNightAH/main/titlebackground.png)">
+        <section class="relative bg-cover bg-center text-white py-24 md:py-32" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://raw.githubusercontent.com/AmberLinks/ALTsNightAH/main/titlebackground.png); background-position: center;">
             <div class="container mx-auto px-4 text-center">
-                <h1 class="text-3xl md:text-5xl font-bold mb-4 text-shadow">大切な家族のために。<br>夜間も安心の獣医療を。</h1>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">ALTs夜間動物病院</h1>
+                <p class="text-2xl md:text-3xl mb-4 text-shadow-sm">大切な家族のために。<br>夜間も安心の獣医療を。</p>
                 <p class="text-lg md:text-xl text-shadow-sm">静岡県焼津市の夜間動物病院</p>
                 <div class="mt-8 bg-black/30 backdrop-blur-sm p-6 rounded-lg max-w-3xl mx-auto border border-white/30">
                     <h2 class="text-2xl font-bold mb-2 text-yellow-300">診療時間：火・水・木 18:00 - 22:00</h2>
@@ -115,29 +130,39 @@
         </section>
 
         <!-- 当院について -->
-        <section id="about" class="py-16 md:py-20">
+        <section id="about" class="py-16 md:py-20 bg-gray-50">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center text-iron mb-10">当院について</h2>
                 <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-                    <div class="text-left space-y-5">
-                        <p class="leading-relaxed">
+                    <div class="text-left space-y-6">
+                        <p class="leading-relaxed text-gray-700">
                             ALTs夜間動物病院は、日中の病院が閉まる時間帯に発生する 「いつもと違う」に対応する一次診療施設です。 ご家族の不安に寄り添い、動物たちの状態を安定させることを第一に考えています。必要に応じて翌日以降、かかりつけ医へスムーズに引き継ぎます。
                         </p>
-                        <p class="leading-relaxed bg-amber/20 p-4 rounded-md">
-                            また犬・猫の夜間診療に加え、対応病院の少ない<strong class="text-iron font-bold">エキゾチックアニマルの専門診療</strong>にも力を入れています。 
-                        </p>
-                        <p class="leading-relaxed">
-                            症状が分かりづらいことも多いと思いますので違和感を感じた段階でご受診ください。
-                        </p>
+                        <div class="leading-relaxed bg-amber/20 p-5 rounded-md border-l-4 border-amber">
+                            <p>また犬・猫の夜間診療に加え、対応病院の少ない<strong class="text-iron font-bold">エキゾチックアニマルの専門診療</strong>にも力を入れています。</p>
+                             <p class="mt-2 text-sm text-gray-600">症状が分かりづらいことも多いと思いますので違和感を感じた段階でご受診ください。</p>
+                        </div>
                     </div>
-                    <div class="mt-8 border-t pt-6 text-left text-sm text-gray-700">
-                        <h3 class="font-bold text-iron mb-2">獣医師　浦和勇人</h3>
-                        <ul class="space-y-1 list-disc list-inside">
-                            <li>AniCure動物病院 大崎 院長（東京都品川区）</li>
-                            <li>AmberLinks代表</li>
-                            <li>日本獣医エキゾチック動物学会所属</li>
-                            <li>日本獣医がん学会所属</li>
-                        </ul>
+                    <hr class="my-8">
+                    <div class="flex flex-col sm:flex-row items-center text-center sm:text-left gap-6">
+                        <div class="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 shadow-md">
+                           <img src="https://raw.githubusercontent.com/AmberLinks/ALTsNightAH/main/self.jpg" alt="獣医師 浦和勇人" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-iron mb-2">獣医師　浦和勇人</h3>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>AniCure動物病院 大崎 院長（東京都品川区）</li>
+                                <li>AmberLinks代表</li>
+                                <li>ALTs動物病院　非常勤獣医師</li>
+                            </ul>
+                            <div class="mt-3">
+                                <h4 class="font-semibold text-gray-800 text-sm">＜所属学会＞</h4>
+                                <ul class="mt-1 text-sm text-gray-600 space-y-1">
+                                    <li>日本獣医エキゾチック動物学会所属</li>
+                                    <li>日本獣医がん学会所属</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,7 +199,7 @@
         </section>
 
         <!-- 診療対象動物 -->
-        <section id="animals" class="py-16 md:py-20">
+        <section id="animals" class="py-16 md:py-20 bg-gray-50">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center text-iron mb-10">診療対象動物</h2>
                 <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
@@ -415,14 +440,14 @@
 
 
         <!-- アクセス -->
-        <section id="access" class="py-16 md:py-20">
+        <section id="access" class="py-16 md:py-20 bg-gray-50">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center text-iron mb-10">アクセス</h2>
                 <div class="grid md:grid-cols-2 gap-8 items-center">
                     <div>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.636228765582!2d138.30820387575062!3d34.84023767287037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601a45c6b5c9278d%3A0x87bf521d36fa3b09!2zQUxUc-WLleeJqeeXhemZog!5e0!3m2!1sja!2sjp!4v1756637053269!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-md"></iframe>
                     </div>
-                    <div class="bg-amber/10 p-8 rounded-lg">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
                         <h3 class="text-2xl font-bold text-iron mb-4">ALTs夜間動物病院</h3>
                         <p class="mb-4"><strong>住所:</strong> 〒425-0041 静岡県焼津市石津１丁目19−２</p>
                         <p class="mb-4"><strong>電話番号:</strong> 054-631-4757</p>
@@ -449,16 +474,17 @@
     document.addEventListener('DOMContentLoaded', function() {
         const hamburgerBtn = document.getElementById('hamburger-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const header = document.getElementById('header');
+        const desktopMenuBtn = document.getElementById('desktop-menu-button');
+        const desktopMenu = document.getElementById('desktop-menu');
 
-        // ハンバーガーメニューの開閉
+        // Mobile menu toggle
         hamburgerBtn.addEventListener('click', () => {
             hamburgerBtn.classList.toggle('active');
             mobileMenu.classList.toggle('hidden');
         });
 
-        // メニュー項目クリックでメニューを閉じる
-        document.querySelectorAll('#mobile-menu a, nav a').forEach(link => {
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 if (!mobileMenu.classList.contains('hidden')) {
                     hamburgerBtn.classList.remove('active');
@@ -467,7 +493,32 @@
             });
         });
         
-        // アコーディオンの開閉
+        // Desktop dropdown toggle
+        if (desktopMenuBtn) {
+            desktopMenuBtn.addEventListener('click', () => {
+                desktopMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Close desktop dropdown when a link is clicked
+         document.querySelectorAll('#desktop-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (desktopMenu && !desktopMenu.classList.contains('hidden')) {
+                    desktopMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function(e) {
+            if (desktopMenuBtn && !desktopMenuBtn.contains(e.target) && desktopMenu && !desktopMenu.contains(e.target)) {
+                if(!desktopMenu.classList.contains('hidden')) {
+                    desktopMenu.classList.add('hidden');
+                }
+            }
+        });
+        
+        // Accordion functionality
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
