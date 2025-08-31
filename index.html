@@ -10,7 +10,7 @@
     <style>
         /* カスタムカラースキーム */
         :root {
-            --amber: #E0C9A6; /* 琥珀色からサンドベージュに変更 */
+            --amber: #D3A257; /* 琥珀色 */
             --iron: #36454F;  /* 鉄色 */
             --light-bg: #FDFBF5;
             --text-color: #333;
@@ -30,7 +30,7 @@
         .text-amber { color: var(--amber); }
         .text-iron { color: var(--iron); }
         .border-amber { border-color: var(--amber); }
-        .hover\:bg-amber-dark:hover { background-color: #D1B995; } /* ホバー色も調整 */
+        .hover\:bg-amber-dark:hover { background-color: #c08c3c; }
 
         /* ハンバーガーメニューのアニメーション */
         .hamburger .bar { transition: all 0.3s ease-in-out; }
@@ -45,7 +45,7 @@
             transition: max-height 0.3s ease-out;
         }
         .accordion-header.priority {
-             background-color: #FBF8F1; /* 背景色を新しいテーマに合わせる */
+             background-color: #FFFBEB; 
         }
         .text-shadow{ text-shadow: 0 2px 8px rgba(0,0,0,.5); }
         .text-shadow-sm{ text-shadow: 0 1px 4px rgba(0,0,0,.5); }
@@ -192,7 +192,7 @@
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
                         <strong class="text-lg">鳥類</strong>
-                        <span class="text-xs mt-1">インコ, オウム, 猛禽類等</span>
+                        <span class="text-xs mt-1">インコ, オウム等</span>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
                         <strong class="text-lg">爬虫類</strong>
@@ -284,7 +284,7 @@
                                     <li><strong>犬:</strong> ※大型犬・超大型犬は一度ご相談ください。可能な検査・処置に制限が出る場合がございます</li>
                                     <li><strong>猫</strong></li>
                                     <li><strong>ウサギ</strong></li>
-                                    <li><strong>鳥類:</strong> インコ・オウム類（セキセイ、オカメ、ボタン、コザクラ、バタンなど）フィンチ類（文鳥、十姉妹、キンカチョウなど）家禽類（ウズラ、ニワトリ、アヒルなど）・小型猛禽類など</li>
+                                    <li><strong>鳥類:</strong> インコ・オウム類（セキセイ、オカメ、ボタン、コザクラ、バタンなど）フィンチ類（文鳥、十姉妹、キンカチョウなど）家禽類（ウズラ、ニワトリ、アヒルなど）</li>
                                     <li><strong>齧歯類:</strong> モルモット・ハムスター・チンチラ・リス・ジリス・プレーリードッグ・ラット・マウス・スナネズミ・デグーなど</li>
                                     <li><strong>その他哺乳類:</strong> フェレット、ハリネズミ、フクロモモンガ、ミーアキャット、フェネック</li>
                                     <li><strong>爬虫類:</strong> カメ、トカゲ、ヘビなど ※毒ヘビやドクトカゲの診察は行っておりません</li>
@@ -471,9 +471,6 @@
                     content.style.maxHeight = null;
                     icon.classList.remove('rotate-180');
                 } else {
-                    // 他のアコーディオンを閉じる場合はこの2行を有効化
-                    // document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-                    // document.querySelectorAll('.accordion-header .fa-chevron-down').forEach(i => i.classList.remove('rotate-180'));
                     content.style.maxHeight = content.scrollHeight + "px";
                     icon.classList.add('rotate-180');
                 }
